@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aglow Farms</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4d7c0f',secondary:'#84cc16'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="stylesheet" href="index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+</head>
+<body class="bg-white">
+<!-- Header & Navigation -->
+<header class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary">AGLOW FARMS</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="nav-link active text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+<a href="#breeds" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Breeds</a>
+<a href="#story" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Our Story</a>
+</nav>
+<div class="flex items-center">
+<button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Menu -->
+<div class="mobile-menu fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col p-6" id="mobile-menu">
+<div class="flex justify-between items-center mb-8">
+<a href="#" class="text-3xl font-['Pacifico'] text-primary">Aglow Farms</a>
+<button class="flex items-center justify-center w-10 h-10 text-gray-700" id="close-menu-button">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-6">
+<a href="#" class="text-gray-800 text-lg font-medium hover:text-primary transition-colors">Home</a>
+<a href="#breeds" class="text-gray-800 text-lg font-medium hover:text-primary transition-colors">Breeds</a>
+<a href="#story" class="text-gray-800 text-lg font-medium hover:text-primary transition-colors">Our Story</a>
+</nav>
+</div>
+<!-- Hero Section -->
+<section class="w-full relative" style="background-image: url('https://readdy.ai/api/search-image?query=A%20serene%20and%20picturesque%20poultry%20farm%20landscape%20at%20golden%20hour%2C%20with%20rolling%20green%20hills%20in%20the%20background.%20The%20image%20shows%20free-range%20chickens%20roaming%20on%20lush%20green%20grass.%20The%20farm%20has%20wooden%20coops%20and%20barns%20with%20a%20rustic%20yet%20clean%20aesthetic.%20The%20lighting%20is%20warm%20and%20golden%2C%20creating%20a%20peaceful%20atmosphere.%20The%20left%20side%20of%20the%20image%20has%20a%20smooth%20gradient%20to%20allow%20text%20overlay.&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center; height: 100vh;">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+<div class="container mx-auto px-4 h-full flex items-center">
+<div class="w-full md:w-1/2 pt-24 md:pt-0 relative z-10">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">Fresh Farm Poultry, Naturally Raised</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">Experience the difference of truly free-range, organically fed chickens raised with care on our family-owned farm since 1978.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+
+<a href="#story" class="bg-white border-2 border-gray-200 hover:border-primary text-gray-800 hover:text-primary font-medium py-3 px-8 !rounded-button whitespace-nowrap inline-flex items-center justify-center transition-colors">
+Our Story
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Chicken Breeds Section -->
+<section id="breeds" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Heritage Chicken Breeds</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We raise a variety of heritage chicken breeds chosen for their hardiness, temperament, and exceptional meat and egg quality.</p>
+</div>
+<div class="relative">
+<div class="overflow-x-auto pb-8 breed-slider" id="breed-slider">
+<div class="flex gap-6 min-w-max">
+<!-- Breed 1 -->
+<div class="w-80 flex-shrink-0 bg-white rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 rounded-t overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20photograph%20of%20a%20Rhode%20Island%20Red%20chicken%20standing%20in%20a%20green%20pasture.%20The%20chicken%20has%20rich%2C%20deep%20reddish-brown%20feathers%20that%20gleam%20in%20the%20sunlight.%20The%20bird%20looks%20healthy%20and%20robust%20with%20a%20proud%20stance%2C%20bright%20eyes%2C%20and%20red%20comb.%20The%20background%20shows%20a%20natural%20farm%20setting%20with%20soft%20bokeh%20effect.%20The%20lighting%20is%20natural%20and%20flattering%20to%20show%20the%20beautiful%20coloration%20of%20the%20breed.&width=600&height=400&seq=breed1&orientation=landscape" alt="Rhode Island Red" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Rhode Island Red</h3>
+<p class="text-gray-600 mb-4">A hardy American breed known for excellent egg production and good meat quality. Our Rhode Island Reds are dual-purpose birds with rich, flavorful meat.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Dual Purpose</span>
+<span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Excellent Layers</span>
+<span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Cold Hardy</span>
+</div>
+</div>
+</div>
+<!-- Breed 2 -->
+<div class="w-80 flex-shrink-0 bg-white rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 rounded-t overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20photograph%20of%20a%20Barred%20Plymouth%20Rock%20chicken%20standing%20in%20a%20green%20pasture.%20The%20chicken%20has%20distinctive%20black%20and%20white%20barred%20feathers%20creating%20a%20beautiful%20pattern.%20The%20bird%20looks%20healthy%20and%20robust%20with%20a%20proud%20stance%2C%20bright%20eyes%2C%20and%20red%20comb.%20The%20background%20shows%20a%20natural%20farm%20setting%20with%20soft%20bokeh%20effect.%20The%20lighting%20is%20natural%20and%20flattering%20to%20show%20the%20beautiful%20barred%20pattern%20of%20the%20breed.&width=600&height=400&seq=breed2&orientation=landscape" alt="Barred Plymouth Rock" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Barred Plymouth Rock</h3>
+<p class="text-gray-600 mb-4">An American heritage breed with distinctive black and white barred feathers. Known for their docile temperament and excellent meat quality.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Dual Purpose</span>
+<span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Docile</span>
+<span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Meat Quality</span>
+</div>
+</div>
+</div>
+<!-- Breed 3 -->
+<div class="w-80 flex-shrink-0 bg-white rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 rounded-t overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20photograph%20of%20a%20Buff%20Orpington%20chicken%20standing%20in%20a%20green%20pasture.%20The%20chicken%20has%20beautiful%20golden-buff%20colored%20feathers%20that%20shine%20in%20the%20sunlight.%20The%20bird%20is%20large%20and%20fluffy%20with%20a%20round%2C%20plump%20body%20shape.%20It%20looks%20healthy%20and%20robust%20with%20a%20proud%20stance%2C%20bright%20eyes%2C%20and%20red%20comb.%20The%20background%20shows%20a%20natural%20farm%20setting%20with%20soft%20bokeh%20effect.%20The%20lighting%20is%20natural%20and%20flattering%20to%20show%20the%20beautiful%20golden%20coloration%20of%20the%20breed.&width=600&height=400&seq=breed3&orientation=landscape" alt="Buff Orpington" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Buff Orpington</h3>
+<p class="text-gray-600 mb-4">A British breed with beautiful golden feathers. These gentle giants are known for their friendly disposition and rich, tender meat.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Golden Feathers</span>
+<span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Very Docile</span>
+<span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Premium Meat</span>
+</div>
+</div>
+</div>
+<!-- Breed 4 -->
+<div class="w-80 flex-shrink-0 bg-white rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 rounded-t overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20photograph%20of%20a%20Black%20Australorp%20chicken%20standing%20in%20a%20green%20pasture.%20The%20chicken%20has%20iridescent%20black%20feathers%20that%20shimmer%20with%20green%20and%20purple%20highlights%20in%20the%20sunlight.%20The%20bird%20looks%20healthy%20and%20robust%20with%20a%20proud%20stance%2C%20bright%20eyes%2C%20and%20red%20comb.%20The%20background%20shows%20a%20natural%20farm%20setting%20with%20soft%20bokeh%20effect.%20The%20lighting%20is%20natural%20and%20flattering%20to%20show%20the%20beautiful%20iridescent%20quality%20of%20the%20black%20feathers.&width=600&height=400&seq=breed4&orientation=landscape" alt="Black Australorp" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Black Australorp</h3>
+<p class="text-gray-600 mb-4">An Australian breed with glossy black feathers. These birds are excellent egg layers that also produce delicious, tender meat.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Glossy Black</span>
+<span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Prolific Layers</span>
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Dual Purpose</span>
+</div>
+</div>
+</div>
+<!-- Breed 5 -->
+<div class="w-80 flex-shrink-0 bg-white rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 rounded-t overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20photograph%20of%20a%20Silver%20Laced%20Wyandotte%20chicken%20standing%20in%20a%20green%20pasture.%20The%20chicken%20has%20stunning%20black%20feathers%20with%20silvery-white%20lacing%20around%20each%20feather%2C%20creating%20an%20intricate%20pattern.%20The%20bird%20looks%20healthy%20and%20robust%20with%20a%20proud%20stance%2C%20bright%20eyes%2C%20and%20red%20rose%20comb.%20The%20background%20shows%20a%20natural%20farm%20setting%20with%20soft%20bokeh%20effect.%20The%20lighting%20is%20natural%20and%20flattering%20to%20show%20the%20beautiful%20silver%20laced%20pattern%20of%20the%20breed.&width=600&height=400&seq=breed5&orientation=landscape" alt="Silver Laced Wyandotte" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Silver Laced Wyandotte</h3>
+<p class="text-gray-600 mb-4">An American breed with stunning silver-laced plumage. These birds are excellent foragers that produce flavorful meat with a distinctive taste.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Silver Laced</span>
+<span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Good Foragers</span>
+<span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Winter Hardy</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slider Controls -->
+<button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors z-10" id="prev-breed">
+<i class="ri-arrow-left-s-line ri-xl"></i>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-primary transition-colors z-10" id="next-breed">
+<i class="ri-arrow-right-s-line ri-xl"></i>
+</button>
+</div>
+</div>
+</section>
+<!-- Our Farm Story -->
+<section id="story" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2">
+<img src="chicken00.jpg" alt="The Wilson Family" class="w-full h-auto rounded shadow-lg">
+</div>
+<div class="w-full lg:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Farm Story</h2>
+<p class="text-gray-700 mb-4">Established in 1978, Aglow Farms began with a simple mission: to raise chickens the way nature intended. What started as a small backyard flock has grown into a thriving family operation spanning three generations.</p><p class="text-gray-700 mb-4">Our commitment to sustainable farming practices has never wavered. We believe that happy, healthy chickens raised on pasture produce the most nutritious and delicious meat and eggs.</p>
+<p class="text-gray-700 mb-6">Today, our farm spans 75 acres of rolling pastures where our heritage breed chickens roam freely, foraging for insects and plants that contribute to their exceptional flavor. We supplement their natural diet with locally-sourced organic grains free from GMOs, antibiotics, and hormones.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-plant-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Sustainable Practices</h4>
+<p class="text-gray-600 text-sm">Rotational grazing and organic composting</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-heart-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Animal Welfare</h4>
+<p class="text-gray-600 text-sm">Humane handling and spacious coops</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-community-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Community Focus</h4>
+<p class="text-gray-600 text-sm">Local partnerships and farm education</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-recycle-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Zero Waste</h4>
+<p class="text-gray-600 text-sm">Eco-friendly packaging and composting</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap inline-flex items-center justify-center transition-colors">
+<i class="ri-video-line mr-2"></i>
+Watch Farm Tour
+</button>
+
+</div>
+</div>
+</div>
+<!-- Testimonials -->
+<div class="mt-20">
+<h3 class="text-2xl font-bold text-gray-900 text-center mb-12">What Our Customers Say</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6">"The difference in taste between Wilson's chicken and store-bought is remarkable. Their whole chickens make the most flavorful roasts I've ever prepared, and my family can taste the difference."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full mr-4 flex-shrink-0 flex items-center justify-center text-gray-500">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<div>
+<h5 class="font-semibold text-gray-900">Eleanor Richardson</h5>
+<p class="text-gray-500 text-sm">Home Chef</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6">"As a restaurant owner focused on farm-to-table cuisine, Wilson Family Farms has been our trusted poultry supplier for years. Their commitment to quality and consistency is unmatched."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full mr-4 flex-shrink-0 flex items-center justify-center text-gray-500">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<div>
+<h5 class="font-semibold text-gray-900">Michael Thornton</h5>
+<p class="text-gray-500 text-sm">Restaurant Owner</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6">"Their delivery service is so convenient, and I love knowing exactly where my food comes from. The farm fresh eggs have the most vibrant yolks I've ever seen. Worth every penny!"</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full mr-4 flex-shrink-0 flex items-center justify-center text-gray-500">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<div>
+<h5 class="font-semibold text-gray-900">Jennifer Blackwell</h5>
+<p class="text-gray-500 text-sm">Health Coach</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-16 bg-primary/5">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Join Our Farm Community</h2>
+<p class="text-gray-600 mb-8">Subscribe to our newsletter for seasonal updates, special offers, and farm-to-table recipes using our products.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-button border border-gray-300 focus:border-primary focus:outline-none text-gray-700">
+<button type="submit" class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap inline-flex items-center justify-center transition-colors">
+Subscribe
+<i class="ri-mail-send-line ml-2"></i>
+</button>
+</form>
+<div class="mt-6 text-sm text-gray-500">
+<div class="flex items-center justify-center">
+<input type="checkbox" id="consent" class="custom-checkbox">
+<label for="consent" class="text-left">I agree to receive email updates and promotions. You can unsubscribe at any time.</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Aglow Farms</a>
+<p class="text-gray-400 mb-6">Naturally raised poultry since 1978. Family owned and operated for three generations.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#breeds" class="text-gray-400 hover:text-white transition-colors">Chicken Breeds</a></li>
+<li><a href="#story" class="text-gray-400 hover:text-white transition-colors">Our Story</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Farm Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1 text-primary"></i>
+<span class="text-gray-400">Aglow Junction, Kasoa</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3 text-primary"></i>
+<span class="text-gray-400">(055) 123-4567</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3 text-primary"></i>
+<span class="text-gray-400">info@aglowfarms.com</span>
+</li>
+</ul>
+<div class="mt-6">
+<h5 class="font-medium mb-2">Farm Store Hours:</h5>
+<p class="text-gray-400">Friday - Sunday: 9am - 4pm</p>
+<p class="text-gray-400">Monday - Thursday: By appointment</p>
+</div>
+</div>
+<!-- Farm Location -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Farm Location</h4>
+<div class="h-48 bg-gray-800 rounded mb-4 overflow-hidden">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Farm Location Map" class="w-full h-full object-cover">
+</div>
+<a href="#" class="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+<i class="ri-direction-line mr-2"></i>
+Get Directions
+</a>
+</div>
+</div>
+<!-- Payment Methods -->
+<div class="border-t border-gray-800 pt-8 pb-4">
+<div class="flex flex-wrap justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-gray-500 text-sm">&copy; 2025 Aglow Farms. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const closeMenuButton = document.getElementById('close-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.add('open');
+});
+closeMenuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('open');
+});
+// Breed Slider Navigation
+const breedSlider = document.getElementById('breed-slider');
+const prevBreed = document.getElementById('prev-breed');
+const nextBreed = document.getElementById('next-breed');
+prevBreed.addEventListener('click', function() {
+breedSlider.scrollBy({ left: -320, behavior: 'smooth' });
+});
+nextBreed.addEventListener('click', function() {
+breedSlider.scrollBy({ left: 320, behavior: 'smooth' });
+});
+});
+</script>
+</body>
+</html>
